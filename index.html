@@ -3,19 +3,26 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>request</title>
+    <title>XMLHttpRequest</title>
 </head>
 
 <body>
-<!--    <script src="js/jquery.js"></script>-->
     <script>
         
+        // Ajax
+        // JSONPlaceholder, a free online REST API for developers that returns random data in JSON format
+        // initialize a new XMLHttpRequest() method
         const Http = new XMLHttpRequest();
+        // specify the URL endpoint and HTTP method
         const url = 'http://peeyade.com/webapi/blog/popular?limit=99&offset=0';
+        // tie the HTTP method and URL endpoint together
         Http.open('GET', url);
+        // fire off the request
         Http.send();
         
+        // XMLHTTPRequest.onreadystatechange property which contains the event handler to be called when the readystatechanged event is fired.
         Http.onreadystatechange=function(){
+            // readyState=4 means the request is done
             if(this.readyState==4 && this.status==200)
             console.log(Http.responseText)
         }
@@ -24,3 +31,4 @@
 </body>
 
 </html>
+
