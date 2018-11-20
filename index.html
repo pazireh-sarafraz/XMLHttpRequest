@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>request</title>
+</head>
+
+<body>
+<!--    <script src="js/jquery.js"></script>-->
+    <script>
+        
+        const Http = new XMLHttpRequest();
+        const url = 'http://peeyade.com/webapi/blog/popular?limit=99&offset=0';
+        Http.open('GET', url);
+        Http.send();
+        
+        Http.onreadystatechange=function(){
+            if(this.readyState==4 && this.status==200)
+            console.log(Http.responseText)
+        }
+        
+    </script>
+</body>
+
+</html>
